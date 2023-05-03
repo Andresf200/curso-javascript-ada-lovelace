@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parrafo1"></p>
+    <p id="parrafo2"></p>
+    <p id="parrafo3"></p>
+   <script>
+    /* Variable en javascript 
+        -identificadores unicos  
+        -recomendable utilizar identificacdores descriptivos.
+        -Empiezan por letra, $, _ y sigue con letra, número, $ o _
+        - puede contener tanto cadenas ("" '') como numeros (enteros o decimales)
+        -son sensibles a las mayusculas
+        -No puedes utilizarse variables reservadas
+    */
+    
+    var nombre;
+
+    // Mostramos el valor de la variable undefined
+    document.getElementById("parrafo1").innerHTML = nombre;
+
+    nombre = "Felipe ";
+    document.getElementById("parrafo2").innerHTML = nombre;
+
+    // Declaracion de varias variables en una sentencia.
+    var pais = "Reino unido", 
+     nacimiento = 2000;
+     
+    var nombreApellido = "Felipe" + " " + "Florian";
+    var fallecimiento = nacimiento + 20;
+
+    document.getElementById("parrafo3").innerHTML = nombreApellido + " Nacio en " 
+    + pais + " en " + nacimiento + " y murio en " + fallecimiento;
+   </script> 
+</body>
+</html>
