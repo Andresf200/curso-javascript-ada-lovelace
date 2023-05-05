@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle for</title>
+</head>
+<body>
+   <script>
+        /* Sintaxis:
+        for (<sentencia_1>;<sentencia_2>;<sentencia_3>){
+            //Codigo que se repite
+        }
+            -SENTENCIA 1:Se ejecuta antes del que empiece el bloque de codigo a
+            repetir.
+            -SENTENCIA 2:Defien la condicon por la que el bloque de codigo
+            se va ejecutar
+            -SENTENCIA 3:Se ejecuta despues de el codigo a repetir.
+        */
+            var i;
+            for(i = 0;i <= 5; i++){
+                alert(i);
+            }
+
+            /* 1 si omitimos la primera sentencia debemos averla creado con 
+            anterioridad
+            */
+
+            var j = 1;
+
+            for(; j<=5; j++){
+                alert("j = " + j);
+            }
+            
+            //Si omitimos la segunda instruccion debemos crearla adentro
+            //del codigo a repetir bueno debemo incluir el break;
+
+            var k;
+            for(k = 1; ;k++){
+                alert(k);
+                if(k == 5){
+                    break;
+                }
+            }
+        //Si omitimos la sentencia debemos incremetarla dentro del bloque
+
+        var l;
+        for(l = 1; l <= 5;){
+            alert("l = " + l);
+            l++;
+        }
+
+        //podemos trabajar con dos o mas valores dentor del for
+
+        var m, n;
+
+        for(m = 1,n=10; m <= 10, n >= 1;m++, n--){
+            alert("m = " + m + " n = " + n);
+        }
+
+   </script> 
+</body>
+</html>

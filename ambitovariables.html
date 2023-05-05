@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //variables locales
+    /* - se definen dentro de una funcion
+       - tienen ambito local dentro de la funcion
+       - son accesibles unicamente dentro de la funcion 
+       - podemos declarar  funciones con el mismo nombre en diferentes funciones
+       - las variables locales desapararecen cuando termina la funcion. 
+       */
+
+       function saludar(){
+        var saludo = "Hola";
+        alert(saludo);
+       }
+
+       saludar();
+       
+       //Variables Globales
+       /* - Se definen fuera de las funciones 
+          - tiene ambito global(en toda la pagina)
+          - son accesibles en toda la pagina
+          - las variable globales desaparecen al salir de la pagina
+       */
+
+       var despedida = "Adios";
+
+
+       function despedir(){
+        alert(despedida);
+       }
+    
+       despedir();
+       alert(despedida);
+
+       //Varaibles automaticamente globales
+       // - si asignamos a una variable no declarada se convierte en global
+
+       function preguntar(){
+        pregunta = "De que color era el caballo de simon bolivar";
+       }
+       preguntar();
+       alert(pregunta);
+
+       //Variables locales y globales con el mismo nombre
+       var miVariable = "Fuera";
+
+       function ambito(){
+        var miVariable = "Dentro";
+        alert(miVariable);
+       }
+
+       ambito();
+       alert(miVariable);
+
+       //Variable global redefinida dentro de una funcion
+
+       var miVariable2 = "Fuera";
+
+       function ambito(){
+         miVariable2 = "Dentro";
+        alert(miVariable2);
+       }
+
+       ambito();
+       alert(miVariable2);
+   </script> 
+</body>
+</html>

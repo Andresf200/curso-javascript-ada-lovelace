@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Sintaxis  de una funcion anonima    
+        var producto = function(a,b){ return a * b;};
+        var resultado = producto(3,6);
+        alert(resultado);
+
+        //El constructor function()
+        var miFuncion = new Function("a", "b", "return a * b");
+        var resultado2 = miFuncion(5,7);
+        alert(resultado2);
+
+        //Funciones anonimas auto invocadas
+        (function () { alert("Hola!");}());
+    </script> 
+</body>
+</html>

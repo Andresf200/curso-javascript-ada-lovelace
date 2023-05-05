@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saltos, Break y Continue</title>
+</head>
+<body>
+   <script>
+        /* Break: Salir o saltar fuera de un bucle, finalizado
+            Continue: lo que hace es saltar a la siguiente iteracion del 
+            codigo
+        */
+
+        //Ejemplo bucle con break
+        var i;
+
+        for (i = 0; i < 10; i++) {
+            if (i == 3){
+                break;
+            }
+            alert("i = " + i);
+        }
+
+        var j;
+
+        for (j = 0; j < 10; j++) {
+            if (j == 3){
+                continue;
+            }
+            alert("j = " + j);
+        }
+
+        //ETIQUETAS: preceder una sentencia con el nombre de la etiqueta seguido de dos
+        //puntos.
+        // sin etiquetas se puede usar en bucles o switch
+        //ejemplo de break con etiquetas
+
+
+        var animales = ["perro", "gato", "hamster"];
+
+        ver_animales:{
+            alert(animales[0]);
+            alert(animales[1]);
+            break ver_animales;
+            alert(animales[2]);
+        }
+   </script> 
+</body>
+</html>

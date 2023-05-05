@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /* SWITCH:
+            -se utiliza para hacer diferentes acciones basadas en diferentes con
+            diciones.
+            -La condicion que utilizamos se evalua una única vez.
+            -Si hay alguna concidencia se ejecuta el bloque de codigo correspiente
+            -break sale del bloque switch
+        */
+
+        /* Sintaxis 
+            switch(<expresion>){
+                case valor_1: 
+                // Instrucciones para valor_1
+                break;
+                case valor_n: 
+
+                break;
+                // Instrucciones para valor_n
+                default:
+                    //instrucciones para default  
+                break;
+            }
+        */
+
+        var nota3 = 3;
+
+        switch(nota3){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+             mensaje = "Suspenso";
+            break;
+
+            case 5:
+             mensaje = "Suficiente";
+            break;
+
+            case 6:
+             mensaje = "Bien";
+            break;
+
+            case 7:
+             mensaje = "Notable";
+            break;
+
+            case 8:
+             mensaje = "Mutable";
+            break;
+
+            case 9:
+             mensaje = "Sobresaliente";
+            break;
+
+            case 10:
+             mensaje = "Sobresaliente";
+            break;
+
+            default:
+                mensaje = "El valor no es valido.";
+            break;
+        }
+
+        alert(mensaje);
+    </script>            
+</body>
+</html>
