@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos del navegador. Cuadro de Dialogos</title>
+</head>
+<body>
+   <script>
+    //alert(mensaje): muestra un mensaje al usuario y no devuelve ningun valor
+    alert("Hola, AndresF");
+
+    /*prompt(mensaje, texto por defecto): muestra un mensaje al usuario y
+     un campo que puede contener o no un texto por defecto lo que introduzca
+     se almacerana a la variable a la que se asigne 
+    */
+
+    var respuesta = prompt("Cual es tu nombre","Introduce un nombre");
+    alert(respuesta);
+
+    /* confirm(mensaje): muestra un mensaje al usuario y dos botones.
+      si el usuario bulsa aceptar devuelve true si pulsa cancelar o cierra la 
+      ventana devuelve false  */ 
+      var respuesta2 = confirm("Te gusta javascript");
+      alert((respuesta2)? "Me alegro": "Que pena");
+   </script> 
+</body>
+</html>

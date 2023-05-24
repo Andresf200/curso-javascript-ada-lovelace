@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Windows</title>
+</head>
+<body>
+    <p id="ventana"></p>
+    <script>
+
+   /*Caracteristicas 
+   - Representa una ventana abierta en un navegador
+   - Si una ventana tiene etiquetas tipo iframe el navegador crea un objetos
+   window para el html inicial y uno para cada iframe
+   - Todos los objetos, funciones, variables hacen parte del objeto window
+   las funciones son sus metodos las variables globales y el DOM sos propiedades.
+   - No todos los metodos sirven para todos los navegadores hay que comprobar
+   la compatibilidad.
+
+   */ 
+   //Propiedades basicas de window 
+   window.name = "Mi ventana";
+   var texto = "";
+
+   texto += "<br/>Nombre: "+ window.name; 
+
+   // tamaño de la ventana con toolbar  y scroollbar 
+   texto += "<br/>Ancho Externo: "+ window.outerWidth; 
+   texto += "<br/>Alto Externo:" + window.outerHeight;
+   //tamaño de la ventana sin toolbar y scrollbar
+   texto += "<br/>Ancho Interno: "+ window.innerWidth; 
+   texto += "<br/>Alto Interno:" + window.innerHeight;
+   //scroll horizontal y vertical
+   texto += "<br/>Scroll Horizontal: "+ window.pageXOffset; 
+   texto += "<br/>Scroll Vertical: "+ window.pageYOffset; 
+   //Distancia de esquina superior izquierda 
+   texto += "<br/>Distancia desde la izquierda: "+ window.screenX; 
+   texto += "<br/>Distancia desde arriba: "+ window.screenY; 
+
+
+        document.getElementById("ventana").innerHTML = texto;
+
+    //Propiedades con Ifames 
+    /* - frames: devuelve todos los frames de la ventana 
+       - frameElement: devuelve el frame donde la ventana esta insertada 
+       - length: devuelve el numero de frames que tiene la ventana. 
+    */
+
+    /*Propiedades con otras ventanas 
+        - closed: Devuelve un boolea si la ventana esta cerrada 
+        - opener: Devuelve la ventan padre de la ventana 
+        - parent: Devuelve la ventana padre actual 
+        - Self: Nos devuelve la pagina actual 
+    */
+
+    /* Otros objetos del navegador 
+        window.document
+        window.navigator
+        winwow.screen 
+
+        //Metodos mas importantes del objeto window        
+    */
+
+    var miVentana;// crea fuera de las funciones para poder acceder a ella
+
+    //open(url, only, especificaciones )
+
+    function crearVentana(){
+        //miVentana = window.open("http://www.google.com","","")
+        miVentana = window.open("","","width=500,height=200");
+        miVentana.document.write("<h1> Hola Mundo</h1>");
+    }
+
+    //close() cierra una ventana en concreto 
+    function cerrarVentana(){
+        miVentana.close();
+    }
+
+    //resizeBy(npix,npix): redimensiona una ventana en un numero de pixeles respecto a su tamaño actual
+
+    function redimensionarVentana(){
+        miVentana.resizeBy(10,10);
+    }
+
+    //resizeTo(npix,npix): redimensiona la ventana a el numero de pixeles indicacdos
+
+    //moveBy(npix,npix): mueve una ventana un numero de pixles respectos a su pocision actual
+
+    function moveVentana(){
+        miVentana.moveBy(10,10);
+    }
+
+    //moveTo(npix,npix): mueve la ventana a una posicion en concreto.
+
+    //scrollBy(npix,npix): mueve la barra de scroll un numero de pixeles en la posicion actual.
+    //scrollTo(npix,npix): mueve la barra de scroll a una posicion determinada.
+
+    //focus(): pone el foco en la ventan indicada.
+
+    function enfocar(){
+        miVentana.focus();
+    }
+
+    //print(): imprime la venta indicada 
+     
+    function imprimir(){
+        miVentana.print();
+    }
+
+    //stop(): detener la ventana
+
+    </script>
+
+    <button onclick="crearVentana()">Crear Ventana</button>
+    <button onclick="cerrarVentana()">Cerrar Ventana</button>
+    <button onclick="redimensionarVentana()">redimiensionar Ventana</button>
+    <button onclick="moveVentana()">Mover Ventana</button>
+    <button onclick="enfocar()">Enfocar Ventana</button>
+    <button onclick="imprimir()">Imprimir Ventana</button>
+
+</body>
+</html>

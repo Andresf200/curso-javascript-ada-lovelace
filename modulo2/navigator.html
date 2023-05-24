@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto navegador. Navigator</title>
+</head>
+<body>
+
+    <p id="navegador"></p>
+   <script>
+    /*Caracteristicas 
+    - Guarda informacion sobre tu navegador 
+    - no hay un extandar publico pero la mayoria de los navegadores
+    soportan este objeto   
+
+    */ 
+    //propiedades del objeto
+    var text = "";
+
+    //appCodeName: codeName del navegador
+    text += "<br/> CodeName: " + navigator.appCodeName;
+
+    //appName: appName del navegador
+    text += "<br/> appName: " + navigator.appName;
+
+    //appVersion: appVersion version del navegador
+    text += "<br/> appVersion: " + navigator.appVersion;
+
+    //product: motor del navegador
+    text += "<br/> product: " + navigator.product;
+
+    //platform: plataforma de navegador
+    text += "<br/> platform: " + navigator.platform;
+
+    //onLine: saber si esta online ofline
+    text += "<br/> onLine: " + navigator.onLine;
+
+    //languague: lenguaje del navegador
+    text += "<br/> lenguage: " + navigator.language;
+
+    //cookieEnable: cookie abiertas
+    text += "<br/> cookie: " + navigator.cookieEnabled;
+
+    //userAgent: agente del navegador
+    text += "<br/> userAgent: " + navigator.userAgent;
+    
+    //geoLocation: geoLocation del navegador
+    text += "<br/> cookie: " + navigator.geolocation;
+
+    //Metodo del objeto navegador 
+    //javaEnabled(): devuelve true si esta activado java
+
+    alert("Java activado " + navigator.javaEnabled())
+
+    document.getElementById("navegador").innerHTML = text;
+   </script> 
+</body>
+</html>

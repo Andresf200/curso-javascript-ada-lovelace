@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Nativos. Date</title>
+</head>
+<body>
+   <script>
+    /* Creacion de objetos de tipo Date
+    Nota: Los meses inician en 0. los dias tambien siendo el 
+     0 el domingo y el lunes 1...*/
+
+     //Creacion de fecha actual 
+
+     var actual = new Date();
+     alert("Fecha actual es "+ actual);
+
+     //Creacion de fecha con una cadena
+
+     var d1 = new Date("Wed May 17 2023 23:53 GMT +0500 (Colombia Standard Time)");
+     var d2 = new Date("October 09, 2016 23:53");
+     var d3 = new Date("January 12 2012");
+     var d4 = new Date("Jan 12 2012");
+     //Podemos utilizar comas dentro de la propia cadena y estas se ignoran
+     var d5 = new Date("2016-09-12T12:24:21");
+     var d6 = new Date("2016-05-12");
+     var d7 = new Date("2016/05/12");//YYYY/MM/DD O DD/MM/YYYY
+     var d8 = new Date("2016-05");//El dia se sutistuye por uno 
+     var d9 = new Date("2016");//El dia y el mes se sutistuye por uno 
+
+    //! OJO SIEMPRE LOS MESES O DIAS INFERIORES A 10 LLEVAS 0 ANTES 
+
+    /*alert(d1);
+    alert(d2);
+    alert(d3);
+    alert(d4);
+    alert(d5);
+    alert(d6);
+    alert(d7);
+    alert(d8);
+    alert(d9);*/
+
+    //Creacion de fecha con milisegundos 
+    var dms = new Date(8640000);
+   // alert("Fecha en ms:" + dms)
+
+    //Creacion de fecha con numeros 
+    var fechaLarga = new Date(2015,11,10,14,30,25);
+    var fechaCorta = new Date(2015,11,10);
+
+ //   alert("Fecha largo "+ fechaLarga);
+ //   alert("Fecha corta "+ fechaCorta);
+
+    var fecha = new Date();
+  //  alert("Fecha: "+ fecha);
+  //  alert("toString: "+ fecha.toString());
+  //  alert("toUTCSTRING: "+ fecha.toUTCString());
+  //  alert("toDateString: "+ fecha.toDateString());
+
+  //Metodos de  tipo GET
+
+      var fc = new Date("October 1, 2016 10:30:20");
+      alert(fc.getDay() + " " + fc.getDate()+"/"+ fc.getMonth()+"/"
+      + fc.getFullYear());
+
+      alert(fc.getHours() + ":" + fc.getMinutes()+ ":"+ fc.getSeconds()+ ":" 
+      + fc.getMilliseconds());
+
+   //Metodos Set
+   fc.setDate(3);
+   fc.setMonth(11);
+   fc.setFullYear(2031);
+   fc.setHours(23);
+   fc.setMinutes(21);
+   fc.setMilliseconds(12);
+
+   alert(fc.toString());
+
+   //Ejemplo de calculo de hora
+
+   fc.setMonth( fc.setMonth() + 3);
+   alert(fc.toString());
+   </script> 
+</body>
+</html>

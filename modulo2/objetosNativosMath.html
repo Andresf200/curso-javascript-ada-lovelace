@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Nativos. Math</title>
+</head>
+<body>
+   <script>
+     /* Caracteristicas
+        - permite realizar operaciones matematicas
+        - no es un constructor no usamos var x = new Math()
+        Ejemplo var pi = Math.PI; var raiz = Math.sqrt(36);
+     */       
+
+     //Propiedades
+      //E, LN2, LN10, LOG2E, LOG10E, PI, SQRT1_2, SQRT2
+    var pi = Math.PI;
+     // alert("El numero pi es" + pi);
+
+    //Metodos mas comunes 
+    //random() Devuelve un numero aleatorio en 0 y 1
+    // alert("Numero aleatorio" + Math.random());
+
+    //Max and min se le pasa una lista de valores y retorna el min o max correspondiente a la lista
+   // alert("Maximo de valores " + Math.max(1,2,3,5));
+   // alert("Manimo de valores " + Math.min(1,2,3,5));
+
+    //round(numero) Nos Devuelve un numero redondeado
+    var a = 4.3, b = 4.7;
+   // alert("Numero redondeado de a es " + Math.round(a));
+   // alert("Numero redondeado de b es " + Math.round(b));
+
+    //ceil(numero)redondea siempre al alza
+   // alert("Numero redondeado de (a) al alza es " + Math.ceil(a));
+
+    //floor(numero)redondea siempre a la baja
+    //alert("Numero redondeado de (b)  a la baja es es " + Math.floor(b));
+    
+    //numero aleatorio entre 0 y 10 
+    var aleatorio = Math.floor(Math.random()*11);
+   // alert("numero aleatorio entre 0 y 10 es " + aleatorio);
+
+   //pow(base, exponente) Devuelve el valor de la potencia
+   alert("La potencia de 3 al cuadrado es "+ Math.pow(3,2));
+
+   //sqrt(numero) Devuelve la raiz del numero
+   alert("La raiz de 5 es "+ Math.sqrt(5));
+
+   //abs(numero) Devuelve el valor absoluto de numero 
+    alert("Valor absoluto de -5 es " + Math.abs(-5));
+
+    //metodos trigonometricos investigar 
+   </script> 
+</body>
+</html>

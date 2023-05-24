@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Nativos. Number</title>
+</head>
+<body>
+   <script>
+    /* Caracteristicas:
+        - Solo hay un tipo de number
+        - Podemos representar: 34, 34.05, 123e3, 123e-4, 0xff
+
+        //Cambio de base entre numeros: toString()
+    */
+
+        var base10 = 128;
+   //     alert(base10 + "en base 2 es " + base10.toString(2));
+  //      alert(base10 + "en base 8 es " + base10.toString(8));
+  //      alert(base10 + "en base 16 es " + base10.toString(16));
+
+    // Finito y -Infinito: infinity
+
+    var inf = 2;
+    while (inf != Infinity) {
+  //      alert(inf);
+        inf *= inf; 
+    }
+
+    var div1 = 2,div2 = 0;
+ //   alert("Division entre 2/0 es " + 2/0);
+ //   alert("Division entre -2/0 es " + -2/0);
+ //   alert("TypeOf:"  + (div1/div2));
+
+    //Not a number: NaN
+
+    var atipico = 100/"Casa";
+    var atipico2 = 100/"10";
+ //   alert("100/10 es: "+ atipico2);
+ //   alert("es un NaN: atipico " + isNaN(atipico));
+
+    //Numeros Como Objetos:
+
+  //  var num = 123;
+  //  var num2 = new Number(123);
+  //  alert("num " + typeof(num)); // Devuelve number
+  //  alert("num2 " + typeof(num2)); //Devuelve object
+  //  alert("num == num2 " + (num == num2));
+
+
+  //Propiedades
+  // var maximo  =  Number.MAX_VALUE; alert("Maximo " +maximo);
+  // var minimo =  Number.MIN_VALUE; alert("Mininmo " + minimo);
+  // var neginf = Number.NEGATIVE_INFINITY; alert("Negativo Infinito "+ neginf );
+  // var posiinf = Number.POSITIVE_INFINITY; alert("Positivo Infinito "+ posiinf );
+  // var numnan = Number.NaN; alert("No numerica "+ numnan);
+
+  //Metodos 
+  //ToFixed(num_decimales) cadena con el numero de decimales indicados
+  var x = 9.8765;
+ // alert(x.toFixed(0));
+ // alert(x.toFixed(2));
+ // alert(x.toFixed(6));
+
+  //ToPrecision(num_cifras) cadena con el numero especifico de cifras indicado
+  var y = 9.8765;
+  // alert(y.toPrecision());
+  // alert(y.toPrecision(2));
+  // alert(y.toPrecision(6));
+
+  //ToExponential Devuelve una cadena con el numero redondeado a notacion
+  //cientifica
+  z = 1234556;
+    // alert(z.toExponential());
+    // alert(z.toExponential(2));
+
+// typeof devuelve el valor primitivo de un objeto
+// toString devuelve el numero en una cadena.
+
+    var j = 123;
+    // alert(j.toString());
+    // alert((123).toString());
+    // alert((123+7).toString());
+
+
+    //Metodos Globales para convertir variables en numeros.
+    //Number() devuelve el valor numero de una variable
+    alert(Number(true)); //Devuelve 1
+    alert(Number(false)); //Devuelve 0
+    alert(Number(new Date())); //Devuelve los milisegundos trascurridos desde el diia
+    // 1/1/1970
+    alert(Number("10"));//Devuelve el string en numero
+    alert(Number("casa"));//Devuelve NaN
+
+    //ParseInt() / ParseFloat()
+    alert(parseInt("10.6"));//Devuelve el numero
+    alert(parseInt("10 20"));//Devuelve el primer numero
+    alert(parseInt("10 casa"));//Devuelve el primer numero
+    alert(parseInt("casa 10"));//Devuelve NaN
+
+
+
+   </script> 
+</body>
+</html>

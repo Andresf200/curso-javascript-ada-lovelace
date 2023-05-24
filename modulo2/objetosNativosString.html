@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos. Nativos String</title>
+</head>
+<body>
+   <script>
+    //Instanciacion:
+    var daw = "Desarollo de aplicaciones web";
+    var dam = 'Desarollo de aplicaciones Multiplataforma';
+    var asir = "Administracion de 'Sistemas Informaticos' en Red";
+    var smr = "Sistemas \"MicroInformaticos\" y Redes. ";
+    var ciclos = new String("");
+
+    // Concatenas cadenas
+
+    ciclos += "Hay 3 Ciclos de Grado Superior \n";
+    ciclos += daw + ", " + dam + ", " + asir + "\n";
+    ciclos += "y un ciclo de Grado Medio: \n";
+    ciclos += smr;
+
+    alert(ciclos);
+
+    //Propiedades 
+    //length: devuelve la longitud de una cadena
+    alert("La longitud de la cadena ciclos es: " + ciclos.length)
+
+    //Metodos:
+    // Busqueda:
+
+    //CharAt(num): devuleve el caracter de una posicion
+    alert("El caracter 16 de la cadena de ciclos es: " + ciclos.charAt(16));
+
+    //IndexOf(caracter): devuelve la primera posicion de un caracter de una cadena
+    alert("La primera aparicion de la letra a en ciclos es: " + ciclos.indexOf('a'));
+
+    //lastIndexO(caracter): devuelve la ultima posicion de una letra en una cadena
+    alert("La ultima posicion de la letra a  en la cadena ciclos es: " + ciclos.lastIndexOf('a'));
+
+    //search(cadena|expresion): buscar una cadena o expresion regular en otra cadena.
+    alert("Busca la cadena 'web' en la variable daw " + daw.search("web"));
+
+    //match(expresion regular): buscar por expresion regular en una cadena
+
+    //comparacion: 
+    //localeCompare(cadena): devuelve -1 (antes), 0 (igual), 1 (despues)
+    alert("Es daw menor que dam?" + daw.localeCompare(dam));
+
+    //Incluye, Empieza o Termina 
+    //includes(cadena): devuelve true si la cadena incluye le parametro.
+    alert("Incluye 'Aplicaciones' daw " + daw.includes("aplicaciones"));
+
+    //StartWith (cadena): devuelve true si la cadena inicia con el parametro que le pasmos
+    alert("Empieza daw con la palabra 'Aplicaciones'? " + daw.startsWith("aplicacines"));
+
+    //EndWith (cadena): devuelve true si la cadena inicia con el parametro que le pasmos
+    alert("Termina daw con la palabra 'Aplicaciones'? " + daw.endsWith("aplicacines"));
+
+    //Concatenacion y repeticion
+    //concat(cadena): concatena a la cadena el parametro 
+
+    alert("Concatena daw con dam \n " + daw.concat(dam));
+
+    //repeat(numero): repetir devuelve la cadena n numero de veces segun lo indicado en el parametro
+    alert("Repetir la palabra daw \n " + daw.repeat(3));
+
+    //Extraccion
+    //slice(posicion incial, posicion final):devuelve la cadena comprendida entre ambas opciones
+    alert("La cadena que hay entre el 4 y el 6 de daw es: " + daw.slice(4,6));
+
+    //substring(posicion incial, posicion final):devuelve la cadena comprendida entre ambas opciones
+    alert("La cadena que hay entre el 4 y el 6 de daw es: " + daw.substring(4,6));
+
+    //substr(posicion incial, numero):devuelve la cadena comprendida entre la posicion inicial y el numero de caracteres
+    alert("La cadena de 5 caracteres que ahi a partir del caracter 7 es: " + daw.substr(7,5));
+
+    //split(caracter, numero-de-veces): devuelve la cadena en un array separada por cadenas con parametro
+    alert("La cadena daw separada por espacios es: " + daw.split(" "));
+
+    //trim(cadena): extrae los caracter de la cadena eliminando los espacios del principio y del final
+    alert("La cadena sin espacios a el principio y al final quedaria: " + 
+    "              Hola caracola           ".trim())
+
+    //Mayusculas y Minusculas 
+    //toLowerCase(): devuelve la cadena en minusculas:
+    alert(daw.toLowerCase());
+
+    //toUpperCase(): devuelve la cadena en mayusculas:
+    alert(daw.toUpperCase());
+
+    //Metodos especiales 
+    //ToString: devuelve el valor del objeto string
+    //valueOf: devuelve el valor primitivo del objeto
+   </script> 
+</body>
+</html>

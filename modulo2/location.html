@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto del navegador. Location</title>
+</head>
+<body>
+    <p id="location"></p>
+   <script>
+    /* Carateristicas
+    - Guarda informacion de la url actual.
+    - no hay un estandar publico pero en general casi todos los navegadores
+    lo soportan
+    */
+
+    //Propiedades del objeto Location
+    var text = "";
+
+    //href: de la pagina
+    text += "<br/> Href: " + location.href;
+
+    //hostname: nombre del host de la pagina
+    text += "<br/> hostName: " + location.hostname;
+
+    //pathName: nombre del path name
+    text += "<br/> pathName: " + location.pathname;
+    
+    //protocol: devuelve el protocolo de la pagina
+    text += "<br/> protocol: " + location.protocol;
+
+    //hash: devuelve el hash de la pagina o ancla (Ej. www.web.com/index.html/#indice)
+    text += "<br/> Hash: " + location.hash;
+
+    //host: devuelve el nombre del host y el puerto
+    text += "<br/> Host: " + location.hos;
+    
+    //origin: devuelve el nombre del protocolo, el hostname y el puerto
+    text += "<br/> Origin: " + location.origin;
+
+    //search: devuelve la queryString de la pagina 
+    //(Ej. www.web.com/index.html?user=ada)
+    text += "<br/> Search: " + location.search;
+    document.getElementById("location").innerHTML = text;
+
+   //Metodos del objeto location    
+   //assign(url): asigna un nuevo documento de la pagina 
+
+   function nuevoDocumento(){
+    location.assign("https://www.google.com")
+   }
+
+   //reload(): recarga la pagina 
+   function recarga(){
+     location.reload();
+   }
+
+   //replace(url): sustituye la pagina por otra. pero Desaparece su historial
+
+   function sustituye(){
+    location.replace("https://www.google.com");
+   }
+
+   </script> 
+
+   <button onclick="nuevoDocumento()">Carga un nuevo Documento</button>
+   <button onclick="recarga()">Recarga la pagina</button>
+   <button onclick="sustituye()">Sustituye la pagina</button>
+</body>
+
+</html>
+   </script> 
+</body>
+</html>
+   </script> 
+</body>
+</html>
+   </script> 
+</body>
+</html>
+   </script> 
+</body>
+</html>
