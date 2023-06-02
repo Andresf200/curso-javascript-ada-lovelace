@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Prototipos</title>
+</head>
+<body>
+   <script>
+    /* Sintaxis de creacion de un prototipo de un objeto utilizando la funcion
+    constructor:
+    */
+
+    function Persona(nom,ape,ano){
+        this.nombre = nom;
+        this.apellido = ape;
+        this.ano = ano;
+
+        this.nombreCompleto = function(){
+            return this.nombre + " " + this.apellido;
+        }
+    }
+
+    var felipe = new Persona("Andres","Florian",2000); 
+    var camila = new Persona("Camila","Valencia",2002);
+
+    /*Añadir propiedad  a una objeto */
+    felipe.nacionalidad = "Colombia";
+
+    //añadir un metodo a un objeto
+    felipe.nacimiento = function(){ 
+        return "Nacimiento en el año: " + this.ano
+    }
+
+    alert(felipe.nacimiento());
+
+    /* añadir una propiedad a un prototipo 
+        -Añadiendola directamente sobre la definicion de un prototipo
+        - mediante la sintaxis: nombre-objeto.prototype.propiedad
+    */
+
+    Persona.prototype.muerte = 2023;
+    alert(felipe.muerte); 
+
+    /* añadir un metodo sobre un prototipo
+        -añadiendo directamente sobre la definicion de un prototipo
+        -añadiendo mediante la sintaxis: nombre-objeto.prototype.metodo = ...
+    */
+
+    Persona.prototype.defuncion = function(){
+        return "Defuncion en el año " + this.muerte;
+    }
+
+    alert(felipe.defuncion());
+
+    var alan = new Persona("alan", "rodrigez", 1912);
+
+    
+   </script> 
+</body>
+</html>

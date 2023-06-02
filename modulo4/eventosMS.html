@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos. Modelo de registros de eventos avanzados de Microsoft</title>
+</head>
+<body>
+   <h1>Modelo de eventos avanzados de Microsoft</h1> 
+   <h3 id="ms">Modelo de Microsoft</h3>
+   <h3 id="msanonima">Modelo de Microsoft</h3>
+   <!-- elemento.attachEvent("evento_con_con",function);-->
+   <script>
+    document.getElementById("ms").attachEvent("onclick",saludarUnaVez);
+    document.getElementById("ms").attachEvent("onclick",colorear);
+    document.getElementById("ms").attachEvent("onmouseover",fondo);
+
+    function saludarUnaVez(){
+        alert("Hola Mundo");
+        document.getElementById("ms").detachEvent("onclick",saludarUnaVez);
+    }
+
+    function colorear(){ 
+        document.getElementById("ms").style.color = "red";
+    }
+
+    function fondo(){
+        document.getElementById("ms").style.background = "blue";
+    }
+
+    /*Funciones anonimas*/
+    /* elemento.attachEvent("evento_con_on",function(){...});*/
+
+    document.getElementById("ms").attachEvent("onclick",function(){
+        this.style.backgroundColor = "blue";
+    });
+   </script>
+</body>
+</html>

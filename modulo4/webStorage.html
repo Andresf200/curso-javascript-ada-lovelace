@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStorage</title>
+</head>
+<body>
+   <!-- WEB STORAGE
+    - Permite almacenar datos localmente en el navegador del usuario.
+    - Es mas seguro y almacena mas informacion que las cookies.
+    - El web storage se almacena por origen (dominio y protocolo): todas 
+    las paginas del mismo origen puede acceder a los mismos datos
+
+    --> 
+    <script>
+        //comprobacion de que el navegador soporta el storage
+        if (typeof(Storage) != "undefined"){
+            alert("el navegador soporta el WebStorage");
+        }else{
+            alert("el navegador no soporta el WebStorage");
+        }
+
+        //window.localStorage: almacena datos sin Fecha de expiration
+        //crear un elemento (!!Siempre son Cadenas!!)
+        localStorage.setItem("nombre","Ada");//Mejor
+        localStorage.apellido = "Lovelace";//Peor
+
+        //consultar elemento
+        alert(localStorage.getItem("nombre"));//Mejor
+        alert(localStorage.apellido);//Peor
+
+        //borrar elemento
+        localStorage.removeItem("nombre");
+        alert(localStorage.getItem("nombre")+" "+ localStorage.getItem("apellido"));
+
+        //Borrar todos los elementos
+        localStorage.clear();
+        alert(localStorage.getItem("nombre")+" "+ localStorage.getItem("apellido"));
+
+
+        //window.sessionStorage: almacena durante una session 
+        //(si se cierra la venta o  el navegador desaparece)
+
+    //HABRIA QUE INTRODUCIR EL CODIGO DEL LOCA STORAGE DENTRO DEL IF!!  </script>
+</body>
+</html>

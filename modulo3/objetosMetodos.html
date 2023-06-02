@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Metodos</title>
+</head>
+<body>
+   <script>
+    /*Sintaxis de creacion de metodos de un objeto:
+    nombre-metodo: function(){
+        //Instrucciones 
+    }
+
+    Sintaxis de acceso a metodos de un objeto
+    nombre-objeto.nombre-metodo()
+    */
+
+    var persona = {
+        nombre: "Felipe",
+        apellido:"Florian",
+        nombreCompleto: function() {
+            return this.nombre +  " " + this.apellido;
+        }
+    }
+
+    alert(persona.nombre);
+    alert(persona.apellido);
+    alert(persona.nombreCompleto());
+   </script> 
+</body>
+</html>

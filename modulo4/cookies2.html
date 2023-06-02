@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+
+</head>
+<body>
+    <!-- Que son las Cookies?
+        -Datos almacenados en nuestro ordenador de pequeños archivos de texto
+        -Recuerden la infomacion de un usuario aunque se cierre el navegador
+        o se desconecte del servidor
+        - Podemos guardar informacion el nombre del archivo visitante de la pagina
+        el numero de veces que ha entrado a la pagina etc.
+        -se guarda en formas de pares "nombre-valor": usuario = Ada Lovelace
+    -->    
+
+    
+    <button type="button" id="verTodas">Ver Todas las cookies</button>
+    <button type="button" id="crearCookie">Crear Cookie</button>
+    <button type="button" id="modificarCookie">Modificar Cookie</button>
+    <button type="button" id="leerCookie">Leer Cookie</button>
+    <button type="button" id="borrarCookie">Borrar Cookie</button>
+
+    <script>
+        document.getElementById("verTodas").addEventListener("click",
+         verCookies);
+
+        document.getElementById("crearCookie").addEventListener("click",
+         crearModifCookie);
+
+        document.getElementById("modificarCookie").addEventListener("click",
+         crearModifCookie);
+
+        document.getElementById("leerCookie").addEventListener("click",
+         leerCookie);
+
+        document.getElementById("borrarCookie").addEventListener("click",
+         borrarCookie);
+
+         function verCookies(){
+            alert("Cookies actuales: \n"+ document.cookie);
+         }
+
+        function crearModifCookie(){
+            var nombre = prompt("Introduzca el nombre de la cookie");
+            var valor = prompt("introduzca su valor");
+            var expiracion = parseInt(prompt("Introduzca el numero de dias para que expire"));
+
+            setCookie(nombre, valor, expiracion);
+            verCookies();
+        }
+
+        function leerCookie(){
+            var nombre = prompt("Introduzca el nombre de la cookie a consultar");
+            alert(getCookie(nombre));
+        }
+
+        function borrarCookie() { 
+            var nombre = prompt("Introduzca el nombre de la cookie a borrar");
+            deleteCookie(nombre);
+        }
+
+        function deleteCookie(nombre){
+            setCookie(nombre,"",0);
+        }
+
+        function setCookie(nombre, valor, expiracion) {
+            var d = new Date();
+            d.setTime(d.getTime()+expiracion*24*60*60*1000);
+            var expiracion = "expires =" + d.toUTCString()
+            document.cookie = nombre+ "="+valor+";"+expiracion+";path=/";
+        }
+
+        function getCookie(nombre){
+            var nom = nombre+"=";
+            var array = document.cookie.split(";");
+            for(var i = 0; i < array.length; i++) {
+                var c = array[i];
+                while(c.charAt(0) == " "){
+                    c = c.substring(1);
+                }
+                if(c.indexOf(nombre)==0){
+                    return c.substring(nom.length,c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+
+</body>
+</html>

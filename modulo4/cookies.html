@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+
+</head>
+<body>
+    <!-- Que son las Cookies?
+        -Datos almacenados en nuestro ordenador de pequeños archivos de texto
+        -Recuerden la infomacion de un usuario aunque se cierre el navegador
+        o se desconecte del servidor
+        - Podemos guardar informacion el nombre del archivo visitante de la pagina
+        el numero de veces que ha entrado a la pagina etc.
+        -se guarda en formas de pares "nombre-valor": usuario = Ada Lovelace
+    -->    
+    <script>
+        //Crear una cookie: nombre; fecha de expiracion -UTC-; edad-maxima 
+        //en segundos; dominio
+        //document.cookie = "usuario = Andres Felipe; expires=Thu, 16 Nov 2023 12:00:00 UTC; path = /;";
+        document.cookie = "usuario = Andres Felipe;";
+        document.cookie = "sexo = hombre;";
+
+        //Leer una cookie:
+        var miCookie = document.cookie;
+        alert(miCookie);
+
+        //Modificar una cookie:
+        document.cookie = "sexo = mujer;";
+
+        alert(document.cookie);
+
+        //Borrar una cookie:
+        document.cookie = "usuario=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        document.cookie = "sexo=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        alert(document.cookie); 
+    </script>
+
+</body>
+</html>

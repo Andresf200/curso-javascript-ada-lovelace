@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos. Modelo de registro de eventos avanzados del W3C </title>
+</head>
+<body>
+   <h1>Modelo de eventos avanzados del W3C</h1> 
+   <h3 id="w3c">Modelo del W3C</h3>
+   <h3 id="w3canonima"> Modelo de W3C con funciones anonimas</h3>
+
+   <script>
+    /*  Elemento.addEventListener("evento_sin_on",funcion,false| true)*/
+    document.getElementById("w3c").addEventListener("click",saludarUnaVez,false);
+    document.getElementById("w3c").addEventListener("click",colorearse,false);
+    document.getElementById("w3c").addEventListener("mouseover",fondo,false);
+
+    function saludarUnaVez() {
+        alert("Hola Mundo");
+        document.getElementById("w3c").removeEventListener("click",saludarUnaVez);
+    }
+
+    function colorearse() {
+        document.getElementById("w3c").style.color = "red";
+    }
+
+    function fondo() {
+        document.getElementById("w3c").style.background = "blue";
+    }
+
+    /* Funciones anonimas*/
+    //elemento.addEventListener("evento_sin_on",function(){codigo_funcion},false);
+    document.getElementById("w3c").addEventListener("w3canonima",function(){
+        this.style.background = "#C0C0C0";
+    });
+   </script>
+</body>
+</html>
