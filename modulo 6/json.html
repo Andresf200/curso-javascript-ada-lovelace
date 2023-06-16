@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+<body>
+   <div id="demo">
+   </div> 
+    <!-- Json (Javascript Object Notation)
+    -Sintaxis para guardar o intercambiar datos.
+    -Texto escrito en notacion de objetos javascript
+    -Json es mas corto que XML, mas rapido de leer y escribir y puede ser
+    usar arrays.
+    -->
+    <script>
+        /* Sintaxis 
+            -Datos: "nombre" "valor",
+            -Valor: Boolean, Number, null sin comillas; cadenas en "" objecto{} arrays[]
+            no podemos enviar funciones
+            Ej. var ada = {"nombre":"Felipe","nacimiento":2000, "pais": "Colombia"}
+        */
+
+        //Objetos
+        var object1 = {"nombre": "Felipe","nacimiento":2000, "pais": "Colombia"};
+
+        //accesso utilizamos la notacion punto 
+        alert(object1.nombre+ " , "+ object1.nacimiento+ " , "+ object1.pais);
+        alert(object1["nombre"]+ " , "+ object1["nacimiento"]+ " , " +object1["pais"]);
+
+        for (var x in object1) {
+            document.getElementById("demo").innerHTML += x+ ":"+ object1[x]+ "<br>";
+        }
+
+        var object2 = {
+        "nombre": "Felipe",
+        "nacimiento":2000, 
+        "pais": "Colombia",
+        "hijos": { 
+            "hijo1":"Rocky",
+            "hijo2":"Toby",
+            "hijo3":"Mateo",
+            "hijo":"Coco"
+        }
+        };
+
+        //Acesso de un objeto dentro de un objeto 
+        alert("Hijo 1 es "+ object2.hijos.hijo1); //object2.hijo[hijo1]
+
+        var object3 = {
+        "nombre": "Felipe",
+        "nacimiento":2000, 
+        "pais": "Colombia",
+        "hijos":["Rocky","Toby","Mateo","Coco"]
+        };
+
+        alert("Hijo 2 es "+ object3.hijos[1]);
+
+        var z1 = "";
+        for (i in object3.hijos){
+            z1 += object3.hijos[i]+ ", ";
+        }
+
+        document.getElementById("demo").innerHTML +="Todos los hijos son "+ z1 +"<br>";
+
+
+    </script>
+
+</body>
+</html>

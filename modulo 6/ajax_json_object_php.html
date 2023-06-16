@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX json object php</title>
+    <script>
+        window.onload = inicio;
+
+        function inicio(){
+            document.getElementById("mostrar").addEventListener("click",mostrar);
+        }
+
+        function mostrar(){
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200){
+                   //Al hacer parse nos devuelve un objeto 
+                    var objeto = JSON.parse(xhr.responseText);
+
+                    //mostar los datos
+                    document.getElementById("parrafo").innerHTML = objeto.nombre + " nacio en "+ objeto.nacimiento+ " en " +objeto.pais;
+
+                    //convertir json a una cadena
+                    var cadena = JSON.stringify(objeto);
+                    document.getElementById("parrafo").innerHTML += " El Objeto "
+                    + objeto + " en modo cadena" + cadena;
+                }
+            };
+
+            xhr.open("GET","ajax_json_object.php",true);
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <button id="mostrar">Mostrar</button> 
+    <p id="parrafo"></p>
+</body>
+</html>
